@@ -1,17 +1,26 @@
+# =======================================================
+# CatVTON - Full Requirements (Colab-Optimized)
+# Compatible with PyTorch 2.4.0 + CUDA 12.1 + Detectron2
+# =======================================================
+
 # -----------------------------
 # Core Deep Learning Libraries
 # -----------------------------
-torch==2.4.0
-torchvision==0.19.0
-accelerate==0.34.0
+torch==2.4.0+cu121
+torchvision==0.19.0+cu121
+torchaudio==2.4.0+cu121
+-i https://download.pytorch.org/whl/cu121
+
+accelerate==0.34.2
 
 # -----------------------------
-# Hugging Face & Diffusers
+# Hugging Face & Diffusion Models
 # -----------------------------
-git+https://github.com/huggingface/diffusers.git
+diffusers==0.29.2
 transformers==4.46.3
 huggingface_hub==0.34.0
 peft==0.17.0
+safetensors>=0.4.2
 
 # -----------------------------
 # Image / Video Processing
@@ -27,7 +36,7 @@ tqdm==4.66.4
 av==12.3.0
 
 # -----------------------------
-# Config & Utilities
+# Config, Utilities, and UI
 # -----------------------------
 setuptools==51.0.0
 omegaconf==2.3.0
@@ -40,10 +49,9 @@ gradio==4.41.0
 fvcore==0.1.5.post20221221
 iopath>=0.1.10
 pycocotools==2.0.8
-# Install Detectron2 directly from source to ensure compatibility
-git+https://github.com/facebookresearch/detectron2.git
+# Precompiled Detectron2 wheel for Torch 2.4 + CUDA 12.1
+detectron2 -f https://dl.fbaipublicfiles.com/detectron2/wheels/cu121/torch2.4/index.html
 
-# -----------------------------
-# Optional - Performance / Safety
-# -----------------------------
-safetensors>=0.4.2
+# =======================================================
+# End of File
+# =======================================================
