@@ -1,3 +1,6 @@
+# import matplotlib
+# matplotlib.use('Agg')
+
 import os
 import argparse
 import torch
@@ -86,12 +89,12 @@ def main():
     result[0].save(out_path)
     print(f"✅ Saved try-on result to: {out_path}")
 
-    # Step 6: Show result inline (for Colab)
-    try:
-        from IPython.display import Image as ColabImage, display
-        display(ColabImage(filename=out_path))
-    except Exception:
-        pass
+    # # Step 6: Show result inline (for Colab)
+    # try:
+    #     from IPython.display import Image as ColabImage, display
+    #     display(ColabImage(filename=out_path))
+    # except Exception:
+    #     pass
 
 
 if __name__ == "__main__":
