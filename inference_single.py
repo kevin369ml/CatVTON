@@ -1,4 +1,3 @@
-%%writefile inference_single.py
 import os
 import argparse
 import torch
